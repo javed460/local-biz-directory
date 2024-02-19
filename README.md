@@ -1,5 +1,5 @@
 # local-biz-directory
-Local Business Directory Backend application
+Local Business Directory application
 
-# Java version
+# Tech Stack
 Java 21

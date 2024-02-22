@@ -7,11 +7,16 @@
 </head>
 <body>
     <h1>Business Categories</h1>
-    <div th:each="category : ${categories}">
-        <h2 th:text="${category.category}"></h2>
-        <a th:href="@{'/business-details/' + ${category.category}}">
-            <img th:if="${category.category == 'Hotels'}" src="/local-biz-directory/images/hotel.jpg" alt="Hotel Image" />
-        </a>
+
+    <div class="category-container">
+        <div class="category-row" th:each="category, iterStat : ${categories}">
+            <div class="category-column">
+                <h2 th:text="${category.category}"></h2>
+                <a th:href="@{'/business-details/' + ${category.category}}">
+                    <img th:if="${category.category == 'Hotels'}" src="/local-biz-directory/images/hotel.jpg" alt="Hotel Image" />
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

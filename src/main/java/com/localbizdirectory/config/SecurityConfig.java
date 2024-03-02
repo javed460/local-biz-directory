@@ -21,7 +21,7 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        //.requestMatchers("/admin/user").permitAll()
+                        .requestMatchers("/admin/business-category").authenticated()
                         .anyRequest().permitAll()
                 );
         return http.build();

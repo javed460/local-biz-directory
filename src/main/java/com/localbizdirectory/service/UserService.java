@@ -14,4 +14,8 @@ public class UserService {
         User savedUser = userRepo.save(user);
         return savedUser.getId();
     }
+
+    public User findByUsername(String username) {
+        return userRepo.findByUsername(username).orElse(null);
+    }
 }

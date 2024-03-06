@@ -15,4 +15,9 @@ public class BusinessCategoryService {
     public List<BusinessCategory> getAllCategories() {
         return repo.findAll();
     }
+
+    public Integer createCategory(BusinessCategory businessCategory) {
+        BusinessCategory savedBusinessCat = repo.save(businessCategory);
+        return savedBusinessCat.getId();
+    }
 }

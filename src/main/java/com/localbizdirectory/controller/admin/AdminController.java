@@ -2,6 +2,7 @@ package com.localbizdirectory.controller.admin;
 
 import com.localbizdirectory.dto.BusinessCategoryDTO;
 import com.localbizdirectory.dto.UserRequestDTO;
+import com.localbizdirectory.entity.BusinessCategory;
 import com.localbizdirectory.entity.User;
 import com.localbizdirectory.service.BusinessCategoryService;
 import com.localbizdirectory.service.UserService;
@@ -30,9 +31,9 @@ public class AdminController {
     @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/business-category")
     public Integer createBusinessCategory(@RequestBody BusinessCategoryDTO businessCategoryDTO) {
-        return 1;
-
+        BusinessCategory businessCategory = new BusinessCategory();
+        businessCategory.setCategory(businessCategoryDTO.getCategory());
+        return businessCategoryService.createCategory(businessCategory);
     }
-
 
 }

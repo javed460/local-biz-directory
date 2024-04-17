@@ -1,5 +1,5 @@
 # local-biz-directory
-Local Business Directory application
+Local Business Directory application. Designed to search local businesses
 
 # Tech Stack
 Java 21
